@@ -5,7 +5,7 @@ function fazPost(url, body) {
     request.setRequestHeader("Content-type", "application/json")
     request.send(JSON.stringify(body))
 
-    request.onload = function() {
+    request.onload = function () {
         console.log(this.responseText)
     }
 
@@ -14,20 +14,20 @@ function fazPost(url, body) {
 
 
 function cadastrarColaborador() {
-    event.preventDefault()
-    let url = "https://cafe-app-back.herokuapp.com/colaborador"
+    event.preventDefault();
+    let url = "https://cafe-app-back.herokuapp.com/colaborado/listar"
     let nome = document.getElementById("nome").value
     let cpf = document.getElementById("cpf").value
     let item = document.getElementById("item").value
-    console.log(nome)
-    console.log(cpf)
-    console.log(item)
+    console.log(nome);
+    console.log(cpf);
+    console.log(item);
 
     body = {
         "name": nome,
         "cpf": cpf,
-        "item" : item
+        "item": item
     }
 
-    fazPost(url, body)
+    fazPost(url, body);
 }
